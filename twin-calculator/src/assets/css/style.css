@@ -1,0 +1,29 @@
+
+
+.display-result {
+
+}
+.display-calculation {
+
+}
+.keypad-container {
+    display: grid;
+    gap: 1em 1em;
+    grid-template-columns: 2rem 2rem 2rem 2rem;
+    grid-template-rows: 2rem;
+}
+.keypad-button {
+
+}
+.keypad-button-function {
+    background-color: lightgray;
+}
+.keypad-button-operator {
+    background-color: orange;
+}
+.keypad-button-operand {
+    background-color: darkslategray;
+}
+.keypad-button-moveresult {
+    background-color: green;
+}
