@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import './assets/css/style.css'
+import Button from './components/button/Button';
 import Calculator from './components/calculator/Calculator';
 
 function App() {
@@ -15,9 +16,9 @@ function App() {
       <main role="main">
         <Calculator />
         <section className="app-keypad">
-          <button className="keypad-button">&lt;</button>
-          <button className="keypad-button">&gt;</button>
-          <button className="keypad-button">del</button>
+          <Button variant="moveresult">&lt;</Button>
+          <Button variant="moveresult">&gt;</Button>
+          <Button variant="function">del</Button>
         </section>
         <Calculator />
       </main>
