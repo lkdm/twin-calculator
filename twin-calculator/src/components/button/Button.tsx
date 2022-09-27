@@ -5,7 +5,7 @@ interface Props {
 }
 
 const Button = ({ children }: Props) =>
-    <button>
+    <button className="keypad-button">
         {children}
     </button>
 

@@ -6,15 +6,21 @@ import Calculator from './components/calculator/Calculator';
 function App() {
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <header>
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-          <Button>Nice</Button>
+          Twin Calculator
         </p>
-      </header> */}
+      </header>
 
-      <Calculator />
+      <main role="main">
+        <Calculator />
+        <section className="app-keypad">
+          <button className="keypad-button">&lt;</button>
+          <button className="keypad-button">&gt;</button>
+          <button className="keypad-button">del</button>
+        </section>
+        <Calculator />
+      </main>
 
     </div>
   );

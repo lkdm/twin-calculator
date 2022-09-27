@@ -1,19 +1,51 @@
 
+body {
+    background-color: black;
+}
+header {
+    color: white;
+}
+main {
+    margin: auto;
+    display: flex;
+    max-width: 1060px;
+}
+
+.calculator {
+    width: 50vw;
+    height: 100vh;
+}
+
+.app-keypad {
+    width: 10vw;
+    height: 100vh;
+    display: grid;
+    gap: 2% 2%;
+    grid-template-columns: 100%;
+    grid-template-rows: 4rem 4rem 4rem;
+}
 
 .display-result {
-
+    color: #fff;
+    text-align: right;
+    font-size: 4rem;
 }
 .display-calculation {
-
+    color: #fff;
+    text-align: left;
+    font-size: 2rem;
 }
 .keypad-container {
     display: grid;
-    gap: 1em 1em;
-    grid-template-columns: 2rem 2rem 2rem 2rem;
-    grid-template-rows: 2rem;
+    gap: 2% 2%;
+    height: 50vh;
+    justify-content: space-evenly;
+    grid-template-columns: 23% 23% 23% 23%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
 }
 .keypad-button {
-
+    border-radius: 1em;
+    font-size: 1.4rem;
 }
 .keypad-button-function {
     background-color: lightgray;
