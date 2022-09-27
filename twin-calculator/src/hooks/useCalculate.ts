@@ -1,30 +1,47 @@
-// import React from 'react'
+import React, { useReducer } from 'react'
 
-// const ACTIONS = {
-// 	INCREMENT: 'increment',
-// 	DECREMENT: 'decrement'
-// }
+const ACTIONKIND = {
+	ADD: 'add',
+	SUBTRACT: 'subtract',
+	MULTIPLY: 'multiply',
+	DIVIDE: 'divide',
+	EQUALS: 'equals',
+} as const
 
-// const reducer = (state, action, payload) =>  {
-// 	switch (action.type) {
-// 		case: ACTIONS.INCREMENT:
-// 			return { count: state.count + 1 }
-// 		case: ACTIONS.DECREMENT:
-// 			return { count: state.count - 1 }
-// 		default:
-// 			return state
-// }
+interface CalculationAction {
+    type: typeof ACTIONKIND[keyof typeof ACTIONKIND],
+    payload: number
+}
 
-// const useCalculate = () => {
-//     const [state, dispatch] = useReducer(reducer, { count: 0 })
+interface CalculationState {
+    result: number
+}
 
-//     const increment = () => dispatch({ type: ACTIONS.INCREMENT, payload: {} })
-// 	const decrement = () => dispatch({ type: ACTIONS.DECREMENT, payload: {} })
-//     return {
-//         increment,
-//         decrement
-//     }
-// }
-// export default useCalculate
+const reducer = (state: CalculationState, action: CalculationAction) =>  {
+	switch (action.type) {
+		case ACTIONKIND.ADD:
+			return { ...state, result: state.result + action.payload }
+		case ACTIONKIND.SUBTRACT:
+			return { ...state, result: state.result - action.payload }
+		default: {
+            console.log('[ERR] Reducer function not implemented.')
+			return state
+        }
+    }
+}
 
-export default {}
+interface Payload {
+    result: number
+}
+
+const useCalculate = () => {
+    const [state, dispatch] = useReducer(reducer, { result: 0 })
+
+    const add = (n: number) => dispatch({ type: ACTIONKIND.ADD, payload: n })
+	const subtract = (n: number) => dispatch({ type: ACTIONKIND.SUBTRACT, payload: n })
+    return {
+        add,
+        subtract
+    }
+}
+export default useCalculate
