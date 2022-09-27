@@ -55,7 +55,7 @@ const useCalculate = () => {
 	const multiply = (n: number) => dispatch({ type: ACTIONKIND.MULTIPLY, payload: n })
 	const divide = (n: number) => dispatch({ type: ACTIONKIND.DIVIDE, payload: n })
 	const reset = () => dispatch({ type: ACTIONKIND.SET, payload: 0 })
-	const invertSign = (n: number) => dispatch({ type: ACTIONKIND.INVERTSIGN, payload: n })
+	const invertSign = () => dispatch({ type: ACTIONKIND.INVERTSIGN, payload: 0 })
 	const modulus = (n: number) => dispatch({ type: ACTIONKIND.MODULUS, payload: n })
     return {
         add,
@@ -64,7 +64,8 @@ const useCalculate = () => {
         divide,
         reset,
         invertSign,
-        modulus
+        modulus,
+        result: state
     }
 }
 export default useCalculate

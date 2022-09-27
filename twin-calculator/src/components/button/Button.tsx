@@ -9,11 +9,12 @@ const BUTTONSTYLE = {
 
 interface Props {
     children: string | string[];
-    variant: 'function' | 'operator' | 'operand' | 'moveresult'
+    variant: 'function' | 'operator' | 'operand' | 'moveresult',
+    handleClick?: () => void
 }
 
-const Button = ({ children, variant }: Props) =>
-    <button className={`keypad-button ${BUTTONSTYLE[variant]}`}>
+const Button = ({ children, variant, handleClick }: Props) =>
+    <button className={`keypad-button ${BUTTONSTYLE[variant]}`} onClick={handleClick}>
         {children}
     </button>
 
